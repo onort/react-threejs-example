@@ -1,0 +1,28 @@
+{
+  "name": "simple-threejs-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clear:cache": "rm -rf .cache",
+    "build": "parcel build src/index.html",
+    "prebuild": "rm -rf dist",
+    "start": "parcel src/index.html --port 3000"
+  },
+  "author": "Onur T.",
+  "license": "ISC",
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.4.5",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.11.0",
+    "postcss-modules": "^1.4.1",
+    "prettier": "^1.15.3"
+  }
+}
