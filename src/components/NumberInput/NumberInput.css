@@ -1,0 +1,49 @@
+.label {
+  display: block;
+  font-size: var(--text-lg);
+  margin-bottom: var(--spacer-sm);
+}
+
+.container {
+  margin: var(--spacer-sm) 0;
+  display: flex;
+}
+
+/* Removes number input spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Removes number input spinners */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.numberInput {
+  width: 2rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0.25rem;
+  border: 1px solid var(--light-border);
+}
+
+.counter {
+  display: inline-block;
+}
+
+.increase,
+.decrease {
+  display: block;
+  padding: 0.1rem 0.2rem;
+  line-height: 0.8;
+  font-size: var(--text-lg);
+  text-align: center;
+  border: 1px solid var(--light-border);
+  cursor: pointer;
+}
