@@ -1,0 +1,3 @@
+export const DECREASE_LENGTH = "DECRESE_LENGTH"
+export const INCREASE_LENGTH = "INCREASE_LENGTH"
+export const SET_LENGTH = "SET_LENGTH"
