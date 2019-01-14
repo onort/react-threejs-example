@@ -6,4 +6,5 @@
   align-items: center;
   border: 1px solid var(--light-border);
   margin-right: var(--spacer-lg);
+  height: 600px;
 }

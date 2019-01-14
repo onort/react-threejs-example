@@ -1,24 +1,16 @@
 import React, { Component } from "react"
-import { connect } from "react-redux"
-import PropTypes from "prop-types"
 
 import styles from "./Viewer.css"
+import { ThreeView } from "../"
 
 class Viewer extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <h2>Viewer</h2>
-        <p>Side length is: {this.props.length}</p>
+        <ThreeView />
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ length }) => ({ length })
-
-Viewer.propTypes = {
-  length: PropTypes.number
-}
-
-export default connect(mapStateToProps)(Viewer)
+export default Viewer

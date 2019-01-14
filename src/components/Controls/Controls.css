@@ -3,6 +3,7 @@
   border: 1px solid var(--light-border);
   border-radius: 2px;
   padding: var(--spacer-lg) var(--spacer-md);
+  height: 100%;
 }
 
 .title {
