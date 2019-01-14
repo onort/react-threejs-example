@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 import styles from "./Controls.css"
 import { decreaseLength, increaseLength, setLength } from "../../redux/actions"
-import { NumberInput } from "../"
+import { ControlRow, NumberInput, RangeSlider } from "../"
 
 class Controls extends Component {
   handleDecrease = () => this.props.decrease()
@@ -13,17 +13,31 @@ class Controls extends Component {
 
   handleInputChange = e => this.props.setLength(parseInt(e.target.value, 10))
 
+  handleSizeDrag = e => this.props.setLength(+e.target.value)
+
   render() {
     const { length } = this.props
     return (
       <div className={styles.container}>
         <h2 className={styles.title}>Controls</h2>
-        <NumberInput
-          currentValue={length}
-          onChange={this.handleInputChange}
-          onDecrease={this.handleDecrease}
-          onIncrease={this.handleIncrease}
-        />
+        <ControlRow label="Side Length">
+          <RangeSlider
+            className={styles.sizeSlider}
+            currentValue={length}
+            onDrag={this.handleSizeDrag}
+            rangeMax={50}
+            rangeMin={0}
+          />
+          <NumberInput
+            className={styles.sizeNumberInput}
+            currentValue={length}
+            max={50}
+            min={1}
+            onChange={this.handleInputChange}
+            onDecrease={this.handleDecrease}
+            onIncrease={this.handleIncrease}
+          />
+        </ControlRow>
       </div>
     )
   }
@@ -42,7 +56,7 @@ const mapDispatchToProps = dispatch => ({
 Controls.propTypes = {
   decrease: PropTypes.func.isRequired,
   increase: PropTypes.func.isRequired,
-  length: PropTypes.number.isRequired,
+  length: PropTypes.number,
   setLength: PropTypes.func.isRequired
 }
 

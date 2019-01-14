@@ -1,0 +1,13 @@
+.row {
+  margin: var(--spacer-md) 0;
+}
+
+.label {
+  font-size: var(--text-lg);
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}

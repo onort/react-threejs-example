@@ -18,7 +18,7 @@ class Viewer extends Component {
 const mapStateToProps = ({ length }) => ({ length })
 
 Viewer.propTypes = {
-  length: PropTypes.number.isRequired
+  length: PropTypes.number
 }
 
 export default connect(mapStateToProps)(Viewer)

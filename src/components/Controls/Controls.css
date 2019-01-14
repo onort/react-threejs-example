@@ -11,3 +11,12 @@
   font-size: var(--text-xlg);
   font-weight: 400;
 }
+
+.sizeSlider {
+  flex: 3;
+  margin-right: var(--spacer-md);
+}
+
+.sizeNumberInput {
+  flex: 2;
+}

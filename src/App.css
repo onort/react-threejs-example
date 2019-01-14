@@ -4,10 +4,16 @@
 :root {
   /* colors */
   --light-border: #ebedf0;
+  --normal-border: #dadada;
+
   --main-text: #314659;
+  --muted-text: #8e969c;
+
+  --primary-color: #159eee;
 
   /* font */
   --primary-font-family: "Roboto", sans-serif;
+  --text-sm: 0.8rem;
   --text-lg: 1.2rem;
   --text-xlg: 1.5rem;
 
