@@ -9,10 +9,7 @@ import {
   setLength,
   toggleAutoRotation
 } from "../../redux/actions"
-import { ControlRow, NumberInput, RangeSlider } from "../"
-
-// Experimental
-import { Toggle } from "../"
+import { ControlRow, NumberInput, RangeSlider, Toggle } from "../"
 
 class Controls extends Component {
   max = 50

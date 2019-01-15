@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Controls /> should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Controls)>
+    <Controls
+      decrease={[Function]}
+      increase={[Function]}
+      length={25}
+      rotation={true}
+      setLength={[Function]}
+      toggleAutoRotation={[Function]}
+    >
+      <div
+        className="container"
+      >
+        <h2
+          className="title"
+        >
+          Controls
+        </h2>
+        <ControlRow
+          inline={false}
+          label="Side Length"
+        >
+          <div
+            className="row "
+          >
+            <span
+              className="label"
+            >
+              Side Length
+            </span>
+            <div
+              className="container"
+            >
+              <RangeSlider
+                className="sizeSlider"
+                currentValue={25}
+                onDrag={[Function]}
+                rangeMax={50}
+                rangeMin={1}
+              >
+                <div
+                  className="container sizeSlider"
+                >
+                  <input
+                    className="slider"
+                    max={50}
+                    min={1}
+                    onChange={[Function]}
+                    type="range"
+                    value={25}
+                  />
+                </div>
+              </RangeSlider>
+              <NumberInput
+                className="sizeNumberInput"
+                currentValue={25}
+                max={50}
+                min={1}
+                onChange={[Function]}
+                onDecrease={[Function]}
+                onIncrease={[Function]}
+              >
+                <div
+                  className="container sizeNumberInput"
+                >
+                  <input
+                    className="numberInput"
+                    onChange={[Function]}
+                    type="number"
+                    value={25}
+                  />
+                  <div
+                    className="counter"
+                  >
+                    <span
+                      className="increase"
+                      onClick={[Function]}
+                    >
+                      +
+                    </span>
+                    <span
+                      className="decrease"
+                      onClick={[Function]}
+                    >
+                      −
+                    </span>
+                  </div>
+                  <span
+                    className="rangeLimits"
+                  >
+                    (
+                    1
+                     - 
+                    50
+                    )
+                  </span>
+                </div>
+              </NumberInput>
+            </div>
+          </div>
+        </ControlRow>
+        <ControlRow
+          inline={true}
+          label="Auto Rotation"
+        >
+          <div
+            className="row inline"
+          >
+            <span
+              className="label"
+            >
+              Auto Rotation
+            </span>
+            <div
+              className="container"
+            >
+              <Toggle
+                checked={true}
+                onToggle={[Function]}
+              >
+                <div
+                  className="container"
+                >
+                  <label
+                    className="switch"
+                  >
+                    <input
+                      defaultChecked={true}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <span
+                      className="slider"
+                    />
+                  </label>
+                </div>
+              </Toggle>
+            </div>
+          </div>
+        </ControlRow>
+      </div>
+    </Controls>
+  </Connect(Controls)>
+</Provider>
+`;
+
+exports[`<Controls /> should match snapshot 2`] = `"<div class=\\"container\\"><h2 class=\\"title\\">Controls</h2><div class=\\"row \\"><span class=\\"label\\">Side Length</span><div class=\\"container\\"><div class=\\"container sizeSlider\\"><input type=\\"range\\" min=\\"1\\" max=\\"50\\" class=\\"slider\\" value=\\"25\\"></div><div class=\\"container sizeNumberInput\\"><input class=\\"numberInput\\" type=\\"number\\" value=\\"25\\"><div class=\\"counter\\"><span class=\\"increase\\">+</span><span class=\\"decrease\\">−</span></div><span class=\\"rangeLimits\\">(1 - 50)</span></div></div></div><div class=\\"row inline\\"><span class=\\"label\\">Auto Rotation</span><div class=\\"container\\"><div class=\\"container\\"><label class=\\"switch\\"><input type=\\"checkbox\\" checked=\\"\\"><span class=\\"slider\\"></span></label></div></div></div></div>"`;
