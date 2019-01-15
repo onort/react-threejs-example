@@ -3,8 +3,16 @@ import { connect } from "react-redux"
 import PropTypes from "prop-types"
 
 import styles from "./Controls.css"
-import { decreaseLength, increaseLength, setLength } from "../../redux/actions"
+import {
+  decreaseLength,
+  increaseLength,
+  setLength,
+  toggleAutoRotation
+} from "../../redux/actions"
 import { ControlRow, NumberInput, RangeSlider } from "../"
+
+// Experimental
+import { Toggle } from "../"
 
 class Controls extends Component {
   max = 50
@@ -28,7 +36,7 @@ class Controls extends Component {
   handleSizeDrag = e => this.props.setLength(+e.target.value)
 
   render() {
-    const { length } = this.props
+    const { length, rotation, toggleAutoRotation } = this.props
     return (
       <div className={styles.container}>
         <h2 className={styles.title}>Controls</h2>
@@ -50,26 +58,32 @@ class Controls extends Component {
             onIncrease={this.handleIncrease}
           />
         </ControlRow>
+        <ControlRow label="Auto Rotation" inline>
+          <Toggle checked={rotation} onToggle={toggleAutoRotation} />
+        </ControlRow>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ length }) => ({
-  length
+const mapStateToProps = ({ length, rotation }) => ({
+  length,
+  rotation
 })
 
 const mapDispatchToProps = dispatch => ({
   decrease: () => dispatch(decreaseLength()),
   increase: () => dispatch(increaseLength()),
-  setLength: length => dispatch(setLength(length))
+  setLength: length => dispatch(setLength(length)),
+  toggleAutoRotation: () => dispatch(toggleAutoRotation())
 })
 
 Controls.propTypes = {
   decrease: PropTypes.func.isRequired,
   increase: PropTypes.func.isRequired,
   length: PropTypes.number,
-  setLength: PropTypes.func.isRequired
+  setLength: PropTypes.func.isRequired,
+  toggleAutoRotation: PropTypes.func.isRequired
 }
 
 export default connect(

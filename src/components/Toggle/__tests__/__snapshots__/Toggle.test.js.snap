@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Toggle /> should match snaphot 1`] = `
+<div
+  className="container"
+>
+  <label
+    className="switch"
+  >
+    <input
+      defaultChecked={false}
+      onChange={[MockFunction]}
+      type="checkbox"
+    />
+    <span
+      className="slider"
+    />
+  </label>
+</div>
+`;
+
+exports[`<Toggle /> should match snaphot 2`] = `"<div class=\\"container\\"><label class=\\"switch\\"><input type=\\"checkbox\\"/><span class=\\"slider\\"></span></label></div>"`;

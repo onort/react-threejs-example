@@ -17,4 +17,9 @@ describe("<ControlRow />", () => {
     expect(wrapper.find(".label").exists()).toBe(true)
     expect(wrapper.find(".label").text()).toBe(testLabel)
   })
+
+  it("should render inline when prop is passed", () => {
+    const wrapper = shallow(<ControlRow label={testLabel} inline />)
+    expect(wrapper.find(".row").hasClass("inline")).toBe(true)
+  })
 })

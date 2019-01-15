@@ -2,7 +2,7 @@
 
 exports[`<ControlRow /> should match snapshot 1`] = `
 <div
-  className="row"
+  className="row "
 >
   <span
     className="label"
@@ -15,4 +15,4 @@ exports[`<ControlRow /> should match snapshot 1`] = `
 </div>
 `;
 
-exports[`<ControlRow /> should match snapshot 2`] = `"<div class=\\"row\\"><span class=\\"label\\">testLabel</span><div class=\\"container\\"></div></div>"`;
+exports[`<ControlRow /> should match snapshot 2`] = `"<div class=\\"row \\"><span class=\\"label\\">testLabel</span><div class=\\"container\\"></div></div>"`;

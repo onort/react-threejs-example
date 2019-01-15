@@ -1,7 +1,8 @@
 import { combineReducers } from "redux"
 
-import { lengthReducer } from "./"
+import { lengthReducer, rotationReducer } from "./"
 
 export default combineReducers({
-  length: lengthReducer
+  length: lengthReducer,
+  rotation: rotationReducer
 })
