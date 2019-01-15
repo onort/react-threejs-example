@@ -1,5 +1,5 @@
 .row {
-  margin: var(--spacer-md) 0;
+  margin: var(--spacer-sm) 0;
 }
 
 .label {
@@ -10,4 +10,5 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin: var(--spacer-xsm) 0;
 }

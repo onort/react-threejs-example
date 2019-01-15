@@ -7,11 +7,23 @@ import { decreaseLength, increaseLength, setLength } from "../../redux/actions"
 import { ControlRow, NumberInput, RangeSlider } from "../"
 
 class Controls extends Component {
-  handleDecrease = () => this.props.decrease()
+  max = 50
+  min = 1
 
-  handleIncrease = () => this.props.increase()
+  handleDecrease = () =>
+    this.props.length > this.min ? this.props.decrease() : null
 
-  handleInputChange = e => this.props.setLength(parseInt(e.target.value, 10))
+  handleIncrease = () =>
+    this.props.length < this.max ? this.props.increase() : null
+
+  handleInputChange = e => {
+    const newLength = e.target.value
+    if (newLength > this.max) {
+      this.props.setLength(this.max)
+      return
+    }
+    this.props.setLength(parseInt(newLength, 10))
+  }
 
   handleSizeDrag = e => this.props.setLength(+e.target.value)
 
@@ -25,14 +37,14 @@ class Controls extends Component {
             className={styles.sizeSlider}
             currentValue={length}
             onDrag={this.handleSizeDrag}
-            rangeMax={50}
-            rangeMin={0}
+            rangeMax={this.max}
+            rangeMin={this.min}
           />
           <NumberInput
             className={styles.sizeNumberInput}
             currentValue={length}
-            max={50}
-            min={1}
+            max={this.max}
+            min={this.min}
             onChange={this.handleInputChange}
             onDecrease={this.handleDecrease}
             onIncrease={this.handleIncrease}

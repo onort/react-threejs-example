@@ -18,7 +18,7 @@ class ThreeView extends Component {
     const containerWidth = this.container.current.offsetWidth
     const containerHeight = this.container.current.offsetHeight
     const aspectRatio = containerWidth / containerHeight
-    const sideLength = this.props.length || 1
+    const initialSideLength = this.props.length
     this.scene = new THREE.Scene()
     this.camera = new THREE.PerspectiveCamera(75, aspectRatio, 1, 1000)
     this.camera.position.z = 60
@@ -26,21 +26,23 @@ class ThreeView extends Component {
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(containerWidth, containerHeight)
     this.threeContainer.current.appendChild(this.renderer.domElement)
-    const geometry = new THREE.BoxGeometry(sideLength, sideLength, sideLength)
+    const geometry = new THREE.BoxGeometry(1, 1, 1)
     const material = new THREE.MeshBasicMaterial({
       color: "#159eee",
       wireframe: true
     })
     this.cube = new THREE.Mesh(geometry, material)
+    this.cube.scale.set(initialSideLength, initialSideLength, initialSideLength)
     this.scene.add(this.cube)
-    this.renderer.render(this.scene, this.camera)
+    this.renderScene()
   }
 
   shouldComponentUpdate(nextProps) {
-    const sideLength = nextProps.length
+    let sideLength = nextProps.length
     if (sideLength !== this.props.length) {
+      sideLength = sideLength > 0 ? sideLength : 1
       this.cube.scale.set(sideLength, sideLength, sideLength)
-      this.renderer.render(this.scene, this.camera)
+      this.renderScene()
       return false
     }
   }
@@ -48,6 +50,8 @@ class ThreeView extends Component {
   componentWillUnmount() {
     this.threeContainer.current.removeChild(this.renderer.domElement)
   }
+
+  renderScene = () => this.renderer.render(this.scene, this.camera)
 
   render() {
     return (

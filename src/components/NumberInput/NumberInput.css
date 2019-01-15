@@ -1,5 +1,5 @@
 .container {
-  margin: var(--spacer-sm) 0;
+  margin: 0;
   display: flex;
 }
 
@@ -45,8 +45,13 @@ input:focus {
   font-size: var(--text-lg);
   text-align: center;
   border: 1px solid var(--light-border);
+  border-left: none;
   cursor: pointer;
   user-select: none;
+}
+
+.decrease {
+  border-top: none;
 }
 
 .rangeLimits {
