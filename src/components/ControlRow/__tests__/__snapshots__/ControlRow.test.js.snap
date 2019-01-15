@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ControlRow /> should match snapshot 1`] = `
+<div
+  className="row"
+>
+  <span
+    className="label"
+  >
+    testLabel
+  </span>
+  <div
+    className="container"
+  />
+</div>
+`;
+
+exports[`<ControlRow /> should match snapshot 2`] = `"<div class=\\"row\\"><span class=\\"label\\">testLabel</span><div class=\\"container\\"></div></div>"`;

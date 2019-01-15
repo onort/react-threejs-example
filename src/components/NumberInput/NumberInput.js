@@ -26,7 +26,7 @@ const NumberInput = props => {
           &#8722;
         </span>
       </div>
-      {max && min && (
+      {max && (min || min === 0) && (
         <span className={styles.rangeLimits}>
           ({min} - {max})
         </span>

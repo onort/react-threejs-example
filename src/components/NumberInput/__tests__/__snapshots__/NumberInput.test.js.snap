@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NumberInput /> should match snapshot 1`] = `
+<div
+  className="container "
+>
+  <input
+    className="numberInput"
+    onChange={[MockFunction]}
+    type="number"
+    value={1}
+  />
+  <div
+    className="counter"
+  >
+    <span
+      className="increase"
+      onClick={[MockFunction]}
+    >
+      +
+    </span>
+    <span
+      className="decrease"
+      onClick={[MockFunction]}
+    >
+      −
+    </span>
+  </div>
+  <span
+    className="rangeLimits"
+  >
+    (
+    1
+     - 
+    5
+    )
+  </span>
+</div>
+`;
+
+exports[`<NumberInput /> should match snapshot 2`] = `"<div class=\\"container \\"><input type=\\"number\\" class=\\"numberInput\\" value=\\"1\\"/><div class=\\"counter\\"><span class=\\"increase\\">+</span><span class=\\"decrease\\">−</span></div><span class=\\"rangeLimits\\">(1 - 5)</span></div>"`;
