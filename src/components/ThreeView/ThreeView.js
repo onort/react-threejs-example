@@ -23,14 +23,14 @@ class ThreeView extends Component {
     this.scene = new THREE.Scene()
     this.camera = new THREE.PerspectiveCamera(75, aspectRatio, 1, 1000)
     this.camera.position.z = 60
-    this.renderer.setClearColor("#e8e8e8")
+    this.renderer.setClearColor("#f2f2f2")
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(containerWidth, containerHeight)
     this.threeContainer.current.appendChild(this.renderer.domElement)
-    const geometry = new THREE.BoxGeometry(1, 1, 1)
+    const geometry = new THREE.BoxGeometry(1, 1, 1, 10, 10, 10)
     const material = new THREE.MeshBasicMaterial({
       color: "#159eee",
-      wireframe: false
+      wireframe: true
     })
     this.cube = new THREE.Mesh(geometry, material)
     this.cube.scale.set(initialSideLength, initialSideLength, initialSideLength)
@@ -68,8 +68,8 @@ class ThreeView extends Component {
   }
 
   startAutoRotation = () => {
-    this.cube.rotation.x += 0.002
-    this.cube.rotation.y += 0.002
+    this.cube.rotation.x += 0.0005
+    this.cube.rotation.y += 0.001
     this.renderScene()
     this.frameId = window.requestAnimationFrame(this.startAutoRotation)
   }

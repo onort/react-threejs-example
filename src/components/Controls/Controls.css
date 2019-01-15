@@ -1,5 +1,5 @@
 .container {
-  flex: 1;
+  width: 25vw;
   border: 1px solid var(--light-border);
   border-radius: 2px;
   padding: var(--spacer-lg) var(--spacer-xlg);
@@ -20,4 +20,20 @@
 
 .sizeNumberInput {
   flex: 2;
+}
+
+@media screen and (max-width: 1380px) and (min-width: 1000px) {
+  .container {
+    width: 32.5vw;
+    padding: var(--spacer-lg) var(--spacer-md);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    box-sizing: border-box;
+    width: 90vw;
+    height: 32.5vh;
+    margin-top: 2.5vh;
+  }
 }

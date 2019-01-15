@@ -36,7 +36,18 @@ body {
 
 .container {
   display: flex;
-  max-width: 100%;
-  margin: 4rem auto;
-  max-width: 1400px;
+  margin: 10vh 10vw;
+}
+
+@media screen and (max-width: 1380px) and (min-width: 1000px) {
+  .container {
+    margin: 10vh 2.5vw;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+    margin: 2.5vh 5vw;
+  }
 }
