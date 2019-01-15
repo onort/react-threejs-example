@@ -1,6 +1,6 @@
 import { types } from "../actions"
 
-const initialLength = 0
+const initialLength = 25
 
 const lengthReducer = (state = initialLength, action) => {
   switch (action.type) {
