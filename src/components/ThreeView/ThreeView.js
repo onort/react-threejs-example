@@ -13,6 +13,7 @@ class ThreeView extends Component {
   threeContainer = new React.createRef()
   container = new React.createRef()
   cube = null
+  frameId = null
 
   componentDidMount() {
     const containerWidth = this.container.current.offsetWidth
@@ -29,12 +30,14 @@ class ThreeView extends Component {
     const geometry = new THREE.BoxGeometry(1, 1, 1)
     const material = new THREE.MeshBasicMaterial({
       color: "#159eee",
-      wireframe: true
+      wireframe: false
     })
     this.cube = new THREE.Mesh(geometry, material)
     this.cube.scale.set(initialSideLength, initialSideLength, initialSideLength)
     this.scene.add(this.cube)
     this.renderScene()
+    this.startAutoRotation()
+    window.addEventListener("resize", this.handleResize)
   }
 
   shouldComponentUpdate(nextProps) {
@@ -48,8 +51,30 @@ class ThreeView extends Component {
   }
 
   componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize)
+    this.stopAutoRotation()
     this.threeContainer.current.removeChild(this.renderer.domElement)
   }
+
+  handleResize = () => {
+    setTimeout(() => {
+      let containerWidth = this.container.current.offsetWidth
+      let containerHeight = this.container.current.offsetHeight
+      this.renderer.setSize(containerWidth, containerHeight)
+      this.camera.aspect = containerWidth / containerHeight
+      this.camera.updateProjectionMatrix()
+      this.renderScene()
+    }, 1)
+  }
+
+  startAutoRotation = () => {
+    this.cube.rotation.x += 0.002
+    this.cube.rotation.y += 0.002
+    this.renderScene()
+    this.frameId = window.requestAnimationFrame(this.startAutoRotation)
+  }
+
+  stopAutoRotation = () => window.cancelAnimationFrame(this.frameId)
 
   renderScene = () => this.renderer.render(this.scene, this.camera)
 
