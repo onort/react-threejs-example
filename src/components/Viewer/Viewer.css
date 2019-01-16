@@ -18,6 +18,7 @@
 
 @media screen and (max-width: 1000px) {
   .container {
+    box-sizing: border-box;
     width: 90vw;
     height: 60vh;
     margin-right: 0;

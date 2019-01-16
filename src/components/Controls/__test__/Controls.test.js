@@ -4,7 +4,7 @@ import { Provider } from "react-redux"
 import configureStore from "redux-mock-store"
 
 import Controls from "../"
-import { Toggle, NumberInput } from "../../"
+import { Controls, NumberInput, Toggle } from "../../"
 import { types } from "../../../redux/actions"
 
 describe("<Controls />", () => {
