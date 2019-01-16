@@ -22,18 +22,33 @@
   flex: 2;
 }
 
-@media screen and (max-width: 1380px) and (min-width: 1000px) {
+@media screen and (max-width: 1380px) and (min-width: 1001px) {
   .container {
     width: 32.5vw;
     padding: var(--spacer-lg) var(--spacer-md);
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) and (min-width: 405px) {
   .container {
     box-sizing: border-box;
     width: 90vw;
     height: 32.5vh;
     margin-top: 2.5vh;
+    padding: var(--spacer-lg) var(--spacer-md);
+  }
+}
+
+@media screen and (max-width: 404px) {
+  .container {
+    box-sizing: border-box;
+    width: 90vw;
+    height: 32.5vh;
+    margin-top: 2.5vh;
+    padding: var(--spacer-md);
+  }
+
+  .sizeSlider {
+    flex: 2;
   }
 }

@@ -1,8 +1,8 @@
 {
-  "name": "simple-threejs-example",
+  "name": "simple-react-threejs-example",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "clear:cache": "rm -rf .cache",
     "build": "parcel build src/index.html",
